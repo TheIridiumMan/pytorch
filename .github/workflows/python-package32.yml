@@ -17,8 +17,12 @@ jobs:
       fail-fast: false
       matrix:
         python-version: ["3.9", "3.10", "3.11"]
+    
 
     steps:
+
+    - name: checkout repo
+      uses: actions/checkout@v4
     - name: Set up Python 3.9 (32-bit)
       uses: actions/setup-python@v4
       with:
@@ -42,4 +46,4 @@ jobs:
 
     - name: Start Building
       run: |
-        py setup.py bdist_wheel
+        py -39 setup.py bdist_wheel
