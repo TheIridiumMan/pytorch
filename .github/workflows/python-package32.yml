@@ -35,9 +35,10 @@ jobs:
         python -m pip install flake8 pytest
         pip install setuptools packaging optree astunparse expecttest!=0.2.0 hypothesis numpy psutil pyyaml requests types-dataclasses typing-extensions>=4.8.0 sympy filelock networkx jinja2 fsspec lintrunner ninja
     - name: Set up MSVC for 32-bit
-    - uses: TheMrMilchmann/setup-msvc-dev@v3
-      with:
-        arch: x86
+      steps:
+        - uses: TheMrMilchmann/setup-msvc-dev@v3
+          with:
+            arch: x86
 
     - name: Start Building
       run: |
