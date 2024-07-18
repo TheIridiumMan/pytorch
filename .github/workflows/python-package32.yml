@@ -35,9 +35,9 @@ jobs:
         python -m pip install flake8 pytest
         pip install setuptools packaging optree astunparse expecttest!=0.2.0 hypothesis numpy psutil pyyaml requests types-dataclasses typing-extensions>=4.8.0 sympy filelock networkx jinja2 fsspec lintrunner ninja
     - name: Set up MSVC for 32-bit
-      shell: cmd
-      run: |
-        call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" x86
+    - uses: TheMrMilchmann/setup-msvc-dev@v3
+      with:
+        arch: x86
 
     - name: Start Building
       run: |
