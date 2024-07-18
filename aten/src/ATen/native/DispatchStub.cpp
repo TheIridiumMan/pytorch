@@ -245,7 +245,7 @@ DispatchResult DispatchStubImpl::try_choose_cpu_impl(
     // Ideally, we should have AVX512 kernels for all kernels.
     if (C10_UNLIKELY(!AVX512)) {
       // dispatch to AVX2, since the AVX512 kernel is missing
-      return AVX2 != nullptr ? DispatchResult(AVX2) : ErrorType::MissingDeviceKernel;
+      return static_cast<void*>(nullptr);
     } else {
       return DispatchResult(AVX512);
     }
