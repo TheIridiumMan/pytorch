@@ -36,6 +36,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        py -V
         python -m pip install flake8 pytest
         python -m pip install setuptools packaging optree astunparse expecttest!=0.2.0 hypothesis numpy psutil pyyaml requests types-dataclasses typing-extensions>=4.8.0 sympy filelock networkx jinja2 fsspec lintrunner ninja
     - name: Setup MSVC Developer Command Prompt
@@ -46,4 +47,5 @@ jobs:
 
     - name: Start Building
       run: |
+        py -V
         py setup.py bdist_wheel
