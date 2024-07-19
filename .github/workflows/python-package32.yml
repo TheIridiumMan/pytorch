@@ -46,4 +46,4 @@ jobs:
 
     - name: Start Building
       run: |
-        py -39 setup.py bdist_wheel
+        py setup.py bdist_wheel
