@@ -37,7 +37,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         python -m pip install flake8 pytest
-        pip install setuptools packaging optree astunparse expecttest!=0.2.0 hypothesis numpy psutil pyyaml requests types-dataclasses typing-extensions>=4.8.0 sympy filelock networkx jinja2 fsspec lintrunner ninja
+        python -m pip install setuptools packaging optree astunparse expecttest!=0.2.0 hypothesis numpy psutil pyyaml requests types-dataclasses typing-extensions>=4.8.0 sympy filelock networkx jinja2 fsspec lintrunner ninja
     - name: Setup MSVC Developer Command Prompt
       uses: TheMrMilchmann/setup-msvc-dev@v3.0.1
       with:
