@@ -49,4 +49,5 @@ jobs:
     - name: Start Building
       run: |
         python -V
+        USE_NNPACK=0 NO_NNPACK=1 USE_FBGEMM=0 USE_DISTRIBUTED=0 python setup.py build
         python setup.py bdist_wheel
