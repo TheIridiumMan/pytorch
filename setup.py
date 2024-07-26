@@ -16,8 +16,8 @@
 USE_CUDA=0
 #     disables CUDA build
 #
-CFLAGS=['-D USE_AVX=OFF', '-D C_HAS_AVX_2=OFF', '-D C_HAS_AVX2_2=OFF', "-D CXX_HAS AVX_2=OFF", "-D CXX_HAS AVX2_2=OFF",
- "-D CAFFE2_COMPILER_SUPPORTS_AVX512_EXTENSIONS=OFF","-DUSE_AVX512=OFF"]
+CFLAGS=['-DUSE_AVX=OFF', '-DC_HAS_AVX_2=OFF', '-DC_HAS_AVX2_2=OFF', "-DCXX_HAS AVX_2=OFF", "-DCXX_HAS AVX2_2=OFF",
+ "-DCAFFE2_COMPILER_SUPPORTS_AVX512_EXTENSIONS=OFF","-DUSE_AVX512=OFF"]
 #     flags to apply to both C and C++ files to be compiled (a quirk of setup.py
 #     which we have faithfully adhered to in our build system is that CFLAGS
 #     also applies to C++ files (unless CXXFLAGS is set), in contrast to the
