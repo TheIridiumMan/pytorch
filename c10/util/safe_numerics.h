@@ -22,6 +22,7 @@ C10_ALWAYS_INLINE bool add_overflows(uint64_t a, uint64_t b, uint64_t* out) {
     *out = result;
     return result < a;  // Overflow occurred if the result is less than one of the operands
  #endif
+}
 
 C10_ALWAYS_INLINE bool mul_overflows(uint64_t a, uint64_t b, uint64_t* out) {
 #if C10_HAS_BUILTIN_OVERFLOW()
