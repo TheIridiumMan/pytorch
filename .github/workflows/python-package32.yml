@@ -29,12 +29,17 @@ jobs:
       with:
         python-version: '3.9'
         architecture: 'x86'
+    - name: Show current directory and list files before extraction
+      run: |
+        echo "Current directory: $(pwd)"
+        echo "Listing root directory contents:"
+        ls
     
     - name: Extract ZIP archive
       run: |
         Expand-Archive -Path "build_.zip" -DestinationPath "build"
 
-    - name: Show current directory and list files
+    - name: Show current directory and list files after extraction
       run: |
         echo "Current directory: $(pwd)"
         echo "Listing root directory contents:"
