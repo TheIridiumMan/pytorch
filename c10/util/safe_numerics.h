@@ -18,14 +18,13 @@
 namespace c10 {
 
 C10_ALWAYS_INLINE bool add_overflows(uint64_t a, uint64_t b, uint64_t* out) {
-#if C10_HAS_BUILTIN_OVERFLOW()
-  return __builtin_add_overflow(a, b, out);
-#else
-  unsigned long long tmp;
-  auto carry = _addcarry_u64(0, a, b, &tmp);
-  *out = tmp;
-  return carry;
-#endif
+  #if C10_HAS_BUILTIN_OVERFLOW()
+    return __builtin_add_overflow(a, b, out);
+  #else
+    uint64_t result = a + b;
+    *out = result;
+    return result < a;  // Overflow occurred if the result is less than one of the operands
+  #endif
 }
 
 C10_ALWAYS_INLINE bool mul_overflows(uint64_t a, uint64_t b, uint64_t* out) {
