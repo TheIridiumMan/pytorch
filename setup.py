@@ -11,7 +11,7 @@
 #   MAX_JOBS
 #     maximum number of compile jobs we should use to compile your code
 #
-#   USE_CUDA=0
+USE_CUDA=0
 #     disables CUDA build
 #
 #   CFLAGS
@@ -25,10 +25,10 @@
 #
 # Environment variables for feature toggles:
 #
-#   USE_CUDNN=0
+USE_CUDNN=0
 #     disables the cuDNN build
 #
-#   USE_FBGEMM=0
+USE_FBGEMM=0
 #     disables the FBGEMM build
 #
 #   USE_KINETO=0
@@ -40,7 +40,7 @@
 #   BUILD_TEST=0
 #     disables the test build
 #
-#   USE_MKLDNN=0
+USE_MKLDNN=0
 #     disables use of MKLDNN
 #
 #   USE_MKLDNN_ACL
@@ -53,19 +53,19 @@
 #   USE_STATIC_MKL
 #     Prefer to link with MKL statically - Unix only
 #
-#   USE_NNPACK=0
+USE_NNPACK=0
 #     disables NNPACK build
 #
-#   USE_QNNPACK=0
+USE_QNNPACK=0
 #     disables QNNPACK build (quantized 8-bit operators)
 #
-#   USE_DISTRIBUTED=0
+#USE_DISTRIBUTED=0
 #     disables distributed (c10d, gloo, mpi, etc.) build
 #
 #   USE_TENSORPIPE=0
 #     disables distributed Tensorpipe backend build
 #
-#   USE_GLOO=0
+USE_GLOO=0
 #     disables distributed gloo backend build
 #
 #   USE_MPI=0
@@ -204,9 +204,9 @@ import sys
 if sys.version_info < (3,):
     print("Python 2 has reached end-of-life and is no longer supported by PyTorch.")
     sys.exit(-1)
-if sys.platform == 'win32' and sys.maxsize.bit_length() == 31:
-    print("32-bit Windows Python runtime is not supported. Please switch to 64-bit Python.")
-    sys.exit(-1)
+#if sys.platform == 'win32' and sys.maxsize.bit_length() == 31:
+#    print("32-bit Windows Python runtime is not supported. Please switch to 64-bit Python.")
+#    sys.exit(-1)
 
 import platform
 python_min_version = (3, 7, 0)
