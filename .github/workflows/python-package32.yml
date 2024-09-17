@@ -37,7 +37,7 @@ jobs:
     
     - name: Extract ZIP archive
       run: |
-        Expand-Archive -LiteralPath "D:\a\pytorch\pytorch\build_.zip" -DestinationPath "D:\a\pytorch\pytorch\build"
+        Expand-Archive -LiteralPath "D:\a\pytorch\pytorch\build.zip" -DestinationPath "D:\a\pytorch\pytorch\build"
 
     - name: Show current directory and list files after extraction
       run: |
