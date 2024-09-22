@@ -12,6 +12,7 @@ jobs:
     env:
       NO_AVX: 1
       NO_AVX2: 1
+      ATEN_CPU_CAPABILITY: default
 
     runs-on: windows-latest
     strategy:
